@@ -1,13 +1,15 @@
-import { styled } from "styled-components"
+import Header from "../components/Header/Header";
+import Nav from "../components/Nav/Nav";
 
-export default function HomePage(){
-    return(
+export default function HomePage() {
+    return (
         <>
-        <Text>Home Page </Text>
+            <Header />
+            <Nav/>
         </>
-    )
+    );
 }
 
-const Text = styled.h1`
-    font-family: 'Roboto', sans-serif;
-`
+
+
+
