@@ -4,7 +4,6 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
         user-select: none;
-        background-color: purple;
     }
     input {
         :focus {
@@ -14,4 +13,4 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default GlobalStyle
+export default GlobalStyle;
