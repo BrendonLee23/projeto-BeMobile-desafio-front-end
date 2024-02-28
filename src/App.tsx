@@ -1,17 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import { styled } from "styled-components"
+import { useState } from "react";
+import InfoContext from "./contexts/InfoContext";
 
 function App() {
 
+  const [infos, setInfos] = useState({});
+
   return (
-    <PagesContainer>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </PagesContainer>
+    <InfoContext.Provider value={{infos, setInfos}}>
+      <PagesContainer>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </PagesContainer>
+    </InfoContext.Provider>
   )
 }
 
