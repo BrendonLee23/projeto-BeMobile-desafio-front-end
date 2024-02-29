@@ -1,7 +1,36 @@
-import UserImage from "../../assets/images/user-test.jpeg"
-import { ItemList, SectionArea, TableBody, TableHeader } from "./Section-Styles";
+import { useContext, useEffect, useState } from "react";
+import { SectionArea, TableBody, TableHeader } from "./Section-Styles";
+import InfoContext from "../../contexts/InfoContext";
+import axios from "axios";
+import ItemList from "../ItemList/ItemList";
+import { DataAPI } from "../../protocols"; 
+
 
 export default function Section() {
+    const { infos, setInfos } = useContext(InfoContext);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const fetchData = () => {
+        setIsLoading(true);
+        axios.get("http://localhost:3000/employees")
+            .then(response => {
+                setInfos(response.data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.log(error);
+                setIsLoading(false);
+            });
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <SectionArea>
             <TableBody>
@@ -22,92 +51,10 @@ export default function Section() {
                         <h2>TELEFONE</h2>
                     </div>
                 </TableHeader>
-                <ItemList>
-                    <div>
-                        <img src={UserImage} alt="User-Image" />
-                    </div>
-                    <div>
-                        <h1>Eloiza jjjjjjjjjjjjjj jjjjjjjjjj</h1>
-                    </div>
-                    <div>
-                        <h1>Dev Front-End</h1>
-                    </div>
-                    <div>
-                        <h1>07/07/2024</h1>
-                    </div>
-                    <div>
-                        <h1>+55 (55) 55555-555</h1>
-                    </div>
-                </ItemList>
-                <ItemList>
-                    <div>
-                        <img src={UserImage} alt="User-Image" />
-                    </div>
-                    <div>
-                        <h1>Maria Eloiza kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</h1>
-                    </div>
-                    <div>
-                        <h1>Dev Front-End</h1>
-                    </div>
-                    <div>
-                        <h1>07/07/2024</h1>
-                    </div>
-                    <div>
-                        <h1>+55 (55) 55555-555</h1>
-                    </div>
-                </ItemList>
-                <ItemList>
-                    <div>
-                        <img src={UserImage} alt="User-Image" />
-                    </div>
-                    <div>
-                        <h1>Maria Eloiza</h1>
-                    </div>
-                    <div>
-                        <h1>Dev Front-End</h1>
-                    </div>
-                    <div>
-                        <h1>07/07/2024</h1>
-                    </div>
-                    <div>
-                        <h1>+55 (55) 55555-555</h1>
-                    </div>
-                </ItemList>
-                <ItemList>
-                    <div>
-                        <img src={UserImage} alt="User-Image" />
-                    </div>
-                    <div>
-                        <h1>Maria Eloiza</h1>
-                    </div>
-                    <div>
-                        <h1>Dev Front-End</h1>
-                    </div>
-                    <div>
-                        <h1>07/07/2024</h1>
-                    </div>
-                    <div>
-                        <h1>+55 (55) 55555-555</h1>
-                    </div>
-                </ItemList>
-                <ItemList>
-                    <div>
-                        <img src={UserImage} alt="User-Image" />
-                    </div>
-                    <div>
-                        <h1>Maria Eloiza</h1>
-                    </div>
-                    <div>
-                        <h1>Dev Front-End</h1>
-                    </div>
-                    <div>
-                        <h1>07/07/2024</h1>
-                    </div>
-                    <div>
-                        <h1>+55 (55) 55555-555</h1>
-                    </div>
-                </ItemList>
+                {infos.map((item: DataAPI, indice: number) => (
+                    <ItemList key={indice} item={item} />
+                ))}
             </TableBody>
         </SectionArea>
-    )
+    );
 }

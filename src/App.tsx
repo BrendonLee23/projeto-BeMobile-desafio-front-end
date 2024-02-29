@@ -3,10 +3,12 @@ import HomePage from "./pages/HomePage"
 import { styled } from "styled-components"
 import { useState } from "react";
 import InfoContext from "./contexts/InfoContext";
+import { DataAPI } from "./protocols";
 
 function App() {
 
-  const [infos, setInfos] = useState({});
+  const [infos, setInfos] = useState<DataAPI[]>([]);
+  console.log(infos, "Flamngo");
 
   return (
     <InfoContext.Provider value={{infos, setInfos}}>
