@@ -1,4 +1,5 @@
 import { DataAPI } from "../../protocols";
+import formatPhoneNumber from "../../utils/formatPhoneNumber";
 import { Employee } from "./ItemList-Styles";
 
 interface ItemListProps {
@@ -6,6 +7,9 @@ interface ItemListProps {
 }
 
 const ItemList: React.FC<ItemListProps> = ({ item }) => {
+    console.log(item.phone)
+    const formattedPhone = formatPhoneNumber(item.phone);
+    
     return (
         <Employee>
             <div>
@@ -21,7 +25,7 @@ const ItemList: React.FC<ItemListProps> = ({ item }) => {
                 <h1>{item.admission_date}</h1>
             </div>
             <div>
-                <h1>{item.phone}</h1>
+                <h1>{formattedPhone}</h1>
             </div>
         </Employee>
     );
