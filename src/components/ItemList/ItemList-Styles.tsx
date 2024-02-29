@@ -29,9 +29,9 @@ export const Employee = styled.div`
         line-height: 19px;
         letter-spacing: 0em;
         color: rgba(28, 28, 28, 1);
-        max-width: 170px; /* Defina o tamanho máximo para o texto */
-        overflow: hidden; /* Oculta o texto além do tamanho máximo */
-        white-space: nowrap; /* Impede que o texto quebre em várias linhas */
-        text-overflow: ellipsis; /* Adiciona reticências (...) quando o texto é truncado */
+        max-width: 170px;
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis;
     }
 `

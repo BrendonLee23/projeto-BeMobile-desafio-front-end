@@ -24,8 +24,8 @@ const StyledInput = styled.div`
     img {
         width: 23px;
         height: 23px;
-        cursor: pointer; /* Adiciona o cursor tipo "pointer" */
-        margin-right: 12px; /* Ajusta a margem para separar o ícone do input */
+        cursor: pointer; 
+        margin-right: 12px; 
         position: absolute;
     }
 `;

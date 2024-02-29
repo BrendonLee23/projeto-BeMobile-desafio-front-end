@@ -1,4 +1,3 @@
-// Section.tsx
 import { useContext, useEffect, useState } from "react";
 import { SectionArea, TableBody, TableHeader } from "./Section-Styles";
 import InfoContext from "../../contexts/InfoContext";
