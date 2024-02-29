@@ -6,14 +6,14 @@ export const Employee = styled.div`
     justify-content: space-around;
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
-    height: 47px;
+    height: 50px;
     gap: 10px;
     border-bottom: 1px solid #E0E0E0; 
     div{
         display:flex;
         align-items: center;
         width: 100%;
-        height: 47px;
+
         padding-left: 30px;
     }
     img {
