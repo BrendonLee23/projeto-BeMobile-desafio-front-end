@@ -1,17 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import HomePage from "./pages/HomePage"
-import { styled } from "styled-components"
 import { useState } from "react";
 import InfoContext from "./contexts/InfoContext";
 import { DataAPI } from "./protocols";
+import { PagesContainer } from "./App-Styles";
 
 function App() {
 
   const [infos, setInfos] = useState<DataAPI[]>([]);
-  console.log(infos, "Flamngo");
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <InfoContext.Provider value={{infos, setInfos}}>
+    <InfoContext.Provider value={{infos, setInfos, searchTerm, setSearchTerm}}>
       <PagesContainer>
         <BrowserRouter>
           <Routes>
@@ -25,9 +25,3 @@ function App() {
 
 export default App
 
-const PagesContainer = styled.main`
-  padding: 0 auto;
-  margin: 0 auto;
-  background: rgba(240, 240, 240, 1);
-  height: 100vh;
-`

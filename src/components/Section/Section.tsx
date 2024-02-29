@@ -1,23 +1,26 @@
+// Section.tsx
 import { useContext, useEffect, useState } from "react";
 import { SectionArea, TableBody, TableHeader } from "./Section-Styles";
 import InfoContext from "../../contexts/InfoContext";
 import axios from "axios";
 import ItemList from "../ItemList/ItemList";
-import { DataAPI } from "../../protocols"; 
+import { CustomImportMeta } from "../../protocols";
 
 
 export default function Section() {
-    const { infos, setInfos } = useContext(InfoContext);
+    const { infos, setInfos, searchTerm } = useContext(InfoContext);
     const [isLoading, setIsLoading] = useState(true);
+    const { VITE_API_URL } = (import.meta as CustomImportMeta).env;
 
     const fetchData = () => {
         setIsLoading(true);
-        axios.get("http://localhost:3000/employees")
-            .then(response => {
+        axios
+            .get(VITE_API_URL + "employees")
+            .then((response) => {
                 setInfos(response.data);
                 setIsLoading(false);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
                 setIsLoading(false);
             });
@@ -27,9 +30,21 @@ export default function Section() {
         fetchData();
     }, []);
 
-    if (isLoading) {
-        return <div>Carregando...</div>;
-    }
+    const filteredInfos = infos.filter((item) => {
+        return (
+            item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.job.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.phone.includes(searchTerm)
+        );
+    });
+
+    const renderItems = isLoading ? (
+        <div>Carregando...</div>
+    ) : (
+        filteredInfos.map((item, indice) => (
+            <ItemList key={indice} item={item} />
+        ))
+    );
 
     return (
         <SectionArea>
@@ -51,9 +66,7 @@ export default function Section() {
                         <h2>TELEFONE</h2>
                     </div>
                 </TableHeader>
-                {infos.map((item: DataAPI, indice: number) => (
-                    <ItemList key={indice} item={item} />
-                ))}
+                {renderItems}
             </TableBody>
         </SectionArea>
     );
