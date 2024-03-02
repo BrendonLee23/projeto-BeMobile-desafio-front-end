@@ -5,6 +5,7 @@ import axios from "axios";
 import ItemList from "../ItemList/ItemList";
 import { CustomImportMeta } from "../../protocols";
 import TableHeader from "../TableHeader/TableHeader";
+import Swal from "sweetalert2";
 
 export default function Section() {
     const { infos, setInfos, searchTerm } = useContext(InfoContext);
@@ -21,6 +22,12 @@ export default function Section() {
             })
             .catch((error) => {
                 console.log(error);
+                Swal.fire({
+                    title: "Erro ao obter dados do clima",
+                    text: "Os dados retornados pela API não estão no formato esperado.",
+                    icon: "error",
+                    confirmButtonText: "😢 okay..."
+                });
                 setIsLoading(false);
             });
     };
