@@ -5,7 +5,7 @@ const StyledNav = styled.div`
     align-items: center;
     justify-content: space-between;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     padding-left: 30px;
     padding-right: 30px;
     h1 {
