@@ -23,7 +23,7 @@ export default function Section() {
             .catch((error) => {
                 console.log(error);
                 Swal.fire({
-                    title: "Erro ao obter dados do clima",
+                    title: "Erro ao obter dados da API",
                     text: "Os dados retornados pela API não estão no formato esperado.",
                     icon: "error",
                     confirmButtonText: "😢 okay..."
@@ -51,6 +51,17 @@ export default function Section() {
             <ItemList key={indice} item={item} />
         ))
     );
+
+    useEffect(() => {
+        if (filteredInfos.length === 0 && searchTerm) {
+            Swal.fire({
+                title: "Funcionário não encontrado",
+                text: "Não encontramos dados relacionados na busca, tente novamente.",
+                icon: "error",
+                confirmButtonText: "😢 okay..."
+            });
+        }
+    }, [filteredInfos, searchTerm]);
 
     return (
         <SectionArea>

@@ -11,8 +11,8 @@ export default function InputArea() {
         const newValue = event.target.value;
         setInputValue(newValue);
         if (newValue.trim() === "") {
-            window.location.reload();
-            /* setInfos(infos); */
+            setSearchTerm(""); 
+            setInfos(infos);
         }
     };
 
