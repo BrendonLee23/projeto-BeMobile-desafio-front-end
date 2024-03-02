@@ -95,3 +95,40 @@ export const EmployeeShort = styled.div`
         text-overflow: ellipsis;
     }
 `
+export const EmployeeHidenCard = styled.div`
+    background-color: #ffffff;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 25px 0px 25px;
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 30px;
+        border-bottom: 2px dotted #c0c0c0;
+    } h1 {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 19px;
+        letter-spacing: 0em;
+        color: rgba(28, 28, 28, 1);
+        max-width: 170px;
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis;
+    } h2 {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        color: rgba(28, 28, 28, 1);
+        max-width: 170px;
+        overflow: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis;
+    }
+`;
