@@ -26,3 +26,11 @@ export interface InputAreaProps {
     searchTerm: string;
     setSearchTerm: React.Dispatch<SetStateAction<string>>;
 }
+
+export interface ItemListProps {
+    item: DataAPI;
+}
+
+export interface VectorAreaProps {
+    onClick: () => void;
+}

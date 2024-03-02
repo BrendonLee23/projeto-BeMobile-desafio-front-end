@@ -16,6 +16,13 @@ const StyledNav = styled.div`
         line-height: 28px;
         letter-spacing: 0px;
         text-align: left;
+
+    }
+    @media (max-width: 550px) {
+            height: 135px;
+            padding: 20px 20px 20px 20px;
+            flex-direction: column;
+            align-items: flex-start;
     }
 `
 

@@ -4,6 +4,9 @@ const StyledInput = styled.div`
     display: flex;
     align-items: center;
     justify-content: end;
+    @media (max-width: 550px) {
+        width: 100%;
+    }
     input {
         width: 300px;
         height: 45px;
@@ -12,6 +15,11 @@ const StyledInput = styled.div`
         border: 1px solid #DFDFDF;
         border-radius: 8px;
         position: relative;
+    }
+    @media (max-width: 550px) {
+        input {
+            width: 100%;
+        }
     }
     input::placeholder {
         font-family: Roboto;

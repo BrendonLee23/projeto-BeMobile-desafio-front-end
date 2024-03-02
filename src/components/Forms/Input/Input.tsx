@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
-import searchIcon from "../../assets/images/lupa.svg";
+import searchIcon from "../../../assets/images/lupa.svg";
 import StyledInput from "./Input-Styles";
-import InfoContext from "../../contexts/InfoContext";
+import InfoContext from "../../../contexts/InfoContext";
 
 export default function InputArea() {
     const { setSearchTerm, setInfos, infos } = useContext(InfoContext);
@@ -16,7 +16,7 @@ export default function InputArea() {
         }
     };
 
-    const handleSearch = () => {
+    const runSearch = () => {
         setSearchTerm(inputValue);
         if (inputValue.trim() !== "") {
             console.log("Resultado da Busca:", inputValue);
@@ -27,12 +27,12 @@ export default function InputArea() {
 
     const searchKeyDownFunction = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === "Enter") {
-            handleSearch();
+            runSearch();
         }
     };
 
-    const handleSearchIconClick = () => {
-        handleSearch();
+    const runSearchIconClick = () => {
+        runSearch();
     };
 
     return (
@@ -46,7 +46,7 @@ export default function InputArea() {
                 autoComplete="on"
                 autoFocus
             />
-            <img src={searchIcon} alt="searchIcon" onClick={handleSearchIconClick} />
+            <img src={searchIcon} alt="searchIcon" onClick={runSearchIconClick} />
         </StyledInput>
     );
 }

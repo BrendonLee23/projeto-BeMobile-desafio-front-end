@@ -1,17 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { SectionArea, TableBody, TableHeader } from "./Section-Styles";
+import { SectionArea, TableBody } from "./Section-Styles";
 import InfoContext from "../../contexts/InfoContext";
 import axios from "axios";
 import ItemList from "../ItemList/ItemList";
 import { CustomImportMeta } from "../../protocols";
-
+import TableHeader from "../TableHeader/TableHeader";
 
 export default function Section() {
     const { infos, setInfos, searchTerm } = useContext(InfoContext);
     const [isLoading, setIsLoading] = useState(true);
     const { VITE_API_URL } = (import.meta as CustomImportMeta).env;
 
-    const fetchData = () => {
+    const bringData = () => {
         setIsLoading(true);
         axios
             .get(VITE_API_URL + "employees")
@@ -26,7 +26,7 @@ export default function Section() {
     };
 
     useEffect(() => {
-        fetchData();
+        bringData();
     }, []);
 
     const filteredInfos = infos.filter((item) => {
@@ -48,23 +48,7 @@ export default function Section() {
     return (
         <SectionArea>
             <TableBody>
-                <TableHeader>
-                    <div>
-                        <h2>FOTO</h2>
-                    </div>
-                    <div>
-                        <h2>NOME</h2>
-                    </div>
-                    <div>
-                        <h2>CARGO</h2>
-                    </div>
-                    <div>
-                        <h2>DATA DE ADMISSÃO</h2>
-                    </div>
-                    <div>
-                        <h2>TELEFONE</h2>
-                    </div>
-                </TableHeader>
+                <TableHeader/>
                 {renderItems}
             </TableBody>
         </SectionArea>

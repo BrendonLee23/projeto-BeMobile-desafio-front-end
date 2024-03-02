@@ -1,4 +1,4 @@
-import InputArea from "../Forms/Input"
+import InputArea from "../Forms/Input/Input"
 import StyledNav from "./Nav-Styles"
 
 export default function Nav() {
