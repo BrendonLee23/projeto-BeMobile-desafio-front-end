@@ -59,6 +59,8 @@ export default function Section() {
                 text: "Não encontramos dados relacionados na busca, tente novamente.",
                 icon: "error",
                 confirmButtonText: "😢 okay..."
+            }).then(() => {
+                window.location.reload();
             });
         }
     }, [filteredInfos, searchTerm]);
