@@ -4,7 +4,9 @@ A aplicação frontend é construída com React, utilizando Vite como ferramenta
 # Versão Demo - Deploy 
 [Link do projeto](https://projeto-be-mobile-desafio-front-end.vercel.app/)
 
-![Tela Inicial](src/assets/images/HomePage.jpeg)
+
+![Descrição da imagem](src/assets/images/HomePage.jpeg)
+
 
 
 # Como funciona?
