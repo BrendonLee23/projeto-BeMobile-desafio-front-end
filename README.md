@@ -4,6 +4,9 @@ A aplicação frontend é construída com React, utilizando Vite como ferramenta
 # Versão Demo - Deploy 
 [Link do projeto](https://projeto-be-mobile-desafio-front-end.vercel.app/)
 
+![Tela Inicial](src/assets/images/HomePage.jpeg)
+
+
 # Como funciona?
 Este projeto é uma aplicação front-end desenvolvida em React com Vite, destinada a exibir e gerenciar informações de funcionários. A aplicação apresenta uma tabela dinâmica de funcionários com opção de busca eficiente, permitindo aos usuários filtrar sua busca inserindo dados específicos no campo de busca, como nome, cargo ou número de telefone, proporcionando uma experiência de usuário personalizada. Além disso, a aplicação é responsiva, adaptando-se de forma fluida tanto para dispositivos web quanto móveis, garantindo uma experiência consistente em todas as plataformas.
 
