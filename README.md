@@ -64,6 +64,11 @@ Para acessar os dados dinâmicos, realizei o deploy da API que compartilha as in
 - Crie uma variável de ambiente e adicione o link do deploy da API:   VITE_API_URL= (link do deploy)
 - Como no exemplo, adicione o seguinte link do local informado: https://json-api-alpha-dun.vercel.app/
 
+---
+
+Versão em inglês ▼
+
+
 # BeMobile Front End Challenge
 The frontend application is built with React, using Vite as a development tool, and TypeScript for static typing. It renders data from a JSON API, presenting detailed information about company employees in an organized and accessible manner. It features a search field for filtered data search.
 
