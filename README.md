@@ -8,7 +8,6 @@ A aplicação frontend é construída com React, utilizando Vite como ferramenta
 ![Descrição da imagem](src/assets/images/HomePage.jpeg)
 
 
-
 # Como funciona?
 Este projeto é uma aplicação front-end desenvolvida em React com Vite, destinada a exibir e gerenciar informações de funcionários. A aplicação apresenta uma tabela dinâmica de funcionários com opção de busca eficiente, permitindo aos usuários filtrar sua busca inserindo dados específicos no campo de busca, como nome, cargo ou número de telefone, proporcionando uma experiência de usuário personalizada. Além disso, a aplicação é responsiva, adaptando-se de forma fluida tanto para dispositivos web quanto móveis, garantindo uma experiência consistente em todas as plataformas.
 
@@ -18,12 +17,21 @@ Este projeto é uma aplicação front-end desenvolvida em React com Vite, destin
 - Em caso de falha na busca de dados, é exibido um alerta informando o erro para o usuário;
 - Os dados exibidos são: Nome, Cargo, Foto de Perfil, Data de Admissão e Número de Telefone;
 
+![table](src/assets/images/tableList.jpeg)
+
 #### Campo de Pesquisa - Busca Filtrada
 - Possui um input para busca de nome, cargo ou telefone, para serem enviados para API e renderizados na tabela;
 - Em caso de sucesso, o usuário recebe uma busca filtrada com os dados relacionados a pesquisa;
 - Em caso de falha é exibido um alerta informando o erro para o usuário;
 - Se a busca for feita com o campo de pesquisa vazio um alerta informa o erro para o usuário.
 
+![search](src/assets/images/SearchBar.jpeg)
+
+#### Versão Mobile
+
+![mobile1](src/assets/images/mobile1.jpeg)
+
+![mobile2](src/assets/images/mobile2.jpeg)
 
 # Motivação 
 
